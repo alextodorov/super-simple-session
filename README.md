@@ -36,7 +36,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use SSSession\SessionFactory;
 
-$session = (new SessionFactory())->create(\SessionHandler), []);
+$session = (new SessionFactory())->create(new \SessionHandler(), []);
 
 $session->start();
 ```
