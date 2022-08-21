@@ -17,7 +17,7 @@ class NativeSessionHandler extends SessionHandler
         if (\substr_count($path, ';') > 0) {
             $path = \trim(\strrchr($path, ';'), ';');
         }
-        
+
         $sessionDir = $path;
 
         \set_error_handler(function ($type, $msg) {
@@ -27,7 +27,7 @@ class NativeSessionHandler extends SessionHandler
 
             return true;
         });
-        
+
         try {
             if (! \is_dir($sessionDir) && ! \mkdir($sessionDir, 0770, true)) {
                 throw new LogicException('Cannot create session directory: ' . $sessionDir);

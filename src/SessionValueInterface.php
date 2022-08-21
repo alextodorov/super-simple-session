@@ -12,4 +12,3 @@ interface SessionValueInterface
 
     public function remove(string $key): void;
 }
-    

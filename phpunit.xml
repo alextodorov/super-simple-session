@@ -10,8 +10,8 @@
     beStrictAboutTodoAnnotatedTests="true"
     failOnRisky="true"
     failOnWarning="true"
-     verbose="true"
-     colors="true">
+    verbose="true"
+    colors="true">
   <coverage>
     <include>
         <directory suffix=".php">src</directory>

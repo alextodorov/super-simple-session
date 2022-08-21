@@ -58,7 +58,7 @@ class Session extends AbstractSession implements SessionInterface, SessionValueI
         if (\session_status() !== \PHP_SESSION_ACTIVE || \headers_sent()) {
             return false;
         }
- 
+
         $_SESSION = [];
 
         \setcookie(\session_name(), '', -1, '/', '', false, true);
@@ -95,7 +95,7 @@ class Session extends AbstractSession implements SessionInterface, SessionValueI
         if (\session_status() !== \PHP_SESSION_ACTIVE || \headers_sent()) {
             return false;
         }
-        
+
         return \session_commit();
     }
 }

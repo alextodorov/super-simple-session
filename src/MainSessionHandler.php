@@ -11,14 +11,17 @@ class MainSessionHandler implements SessionHandlerInterface, SessionUpdateTimest
     {
     }
 
+    /**
+     * @SuppressWarnings(unused)
+     */
     public function open(string $path, string $name): bool
     {
-        return true;   
+        return true;
     }
 
     public function read(string $id): string|false
     {
-        return $this->storage->read($id);   
+        return $this->storage->read($id);
     }
 
     public function write(string $id, string $data): bool
@@ -30,7 +33,10 @@ class MainSessionHandler implements SessionHandlerInterface, SessionUpdateTimest
     {
         return $this->storage->close();
     }
-
+    
+    /**
+     * @SuppressWarnings(unused)
+     */
     public function gc(int $maxLifetime): int|false
     {
         return 0;
