@@ -1,3 +1,4 @@
+phpunit: export XDEBUG_MODE=coverage
 phpunit:
 		@vendor/bin/phpunit --stderr
 
