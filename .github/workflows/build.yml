@@ -29,3 +29,8 @@ jobs:
      
       - name: Tests
         run: "make phpunit"
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          verbose: true
