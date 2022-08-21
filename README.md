@@ -1,7 +1,7 @@
 # Super Simple Session
 A super simple session manager.
 
-![Build Status](https://github.com/alextodorov/super-simple-session/actions/workflows/phpunit.yml/badge.svg?branch=main)
+![Build Status](https://github.com/alextodorov/super-simple-session/actions/workflows/build.yml/badge.svg?branch=main)
 
 Install
 -------
