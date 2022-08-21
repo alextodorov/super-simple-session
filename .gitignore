@@ -1,0 +1,10 @@
+*.phpunit*
+.cache*
+code-coverage/
+*.lock
+*.png
+*.drawio
+vendor/
+*.code-workspace
+.DS_*
+clover.xml

@@ -1,0 +1,31 @@
+{
+    "name": "super-simple/session",
+    "description": "Super Simple Session library.",
+    "type": "library",
+    "keywords": ["session", "session library"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aleksandar Todorov",
+            "email": "aleksandr.todorov@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SSSession\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SSSession\\UnitTest\\": "tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=9.1"
+    }
+}
