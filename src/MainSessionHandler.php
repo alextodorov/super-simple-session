@@ -33,7 +33,7 @@ class MainSessionHandler implements SessionHandlerInterface, SessionUpdateTimest
     {
         return $this->storage->close();
     }
-    
+
     /**
      * @SuppressWarnings(unused)
      */
