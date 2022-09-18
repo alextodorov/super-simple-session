@@ -44,3 +44,9 @@ $session->start();
 For more details check out the [wiki].
 
 [wiki]: https://github.com/alextodorov/super-simple-session/wiki
+
+
+License
+-----
+
+The Super Simple Session is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
