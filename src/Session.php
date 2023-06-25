@@ -44,7 +44,7 @@ class Session extends AbstractSession implements SessionInterface, SessionValueI
             \session_id(\session_create_id());
         }
 
-        if (!\session_start()) {
+        if (!\session_start(['read_and_close' => $this->readonly])) {
             throw new LogicException('Can\'t start the session.');
         }
 

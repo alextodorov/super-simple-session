@@ -5,5 +5,6 @@ phpunit:
 phpunitNoCov:
 		@vendor/bin/phpunit --stderr --no-coverage
 
+phpunitHtmlCov: export XDEBUG_MODE=coverage
 phpunitHtmlCov:
 		@vendor/bin/phpunit --stderr --coverage-html ./code-coverage

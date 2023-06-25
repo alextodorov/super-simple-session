@@ -40,7 +40,7 @@ class SessionValueTest extends TestCase
         $this->assertFalse($this->session->has('notexists'));
     }
 
-    public function provideValidValues(): array
+    public static function provideValidValues(): array
     {
         return [
             [

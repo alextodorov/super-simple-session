@@ -92,7 +92,17 @@ class SessionTest extends TestCase
         $this->assertFalse($this->session->save());
     }
 
-    public function provideValidOptions(): array
+    public function testReadOnlySession(): void
+    {
+        $this->session->enableReadonly();
+        $this->session->start();
+        $this->assertSame(\PHP_SESSION_NONE, \session_status());
+        $this->session->disableReadonly();
+        $this->session->start();
+        $this->assertSame(\PHP_SESSION_ACTIVE, \session_status());
+    }
+
+    public static function provideValidOptions(): array
     {
         return [
             [

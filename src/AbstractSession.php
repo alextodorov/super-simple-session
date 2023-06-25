@@ -6,6 +6,18 @@ use LogicException;
 
 abstract class AbstractSession
 {
+    protected bool $readonly = false;
+
+    public function enableReadOnly(): void
+    {
+        $this->readonly = true;
+    }
+
+    public function disableReadonly(): void
+    {
+        $this->readonly = false;
+    }
+
     public function setName(string $name): void
     {
         if (\session_status() === \PHP_SESSION_ACTIVE) {
