@@ -7,37 +7,37 @@ namespace SSSession\UnitTest;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
-class SessionValueTest extends TestCase
+class SessionBagTest extends TestCase
 {
     use SessionHelper;
 
     /** @dataProvider provideValidValues */
     public function testSetGetValue(string $key, mixed $value): void
     {
-        $this->session->set($key, $value);
+        $this->session->getBag()->set($key, $value);
 
-        $this->assertSame($value, $this->session->get($key));
+        $this->assertSame($value, $this->session->getBag()->get($key));
     }
 
     public function testNotExistingValue(): void
     {
-        $this->assertFalse($this->session->get('notExist'));
+        $this->assertFalse($this->session->getBag()->get('notExist'));
     }
 
     public function testRemoveValue(): void
     {
-        $this->session->set('toRemove', 'test');
-        $this->session->remove('toRemove');
+        $this->session->getBag()->set('toRemove', 'test');
+        $this->session->getBag()->remove('toRemove');
 
-        $this->assertFalse($this->session->get('toRemove'));
+        $this->assertFalse($this->session->getBag()->get('toRemove'));
     }
 
     public function testHasValue(): void
     {
-        $this->session->set('newKey', 'newValue');
+        $this->session->getBag()->set('newKey', 'newValue');
 
-        $this->assertTrue($this->session->has('newKey'));
-        $this->assertFalse($this->session->has('notexists'));
+        $this->assertTrue($this->session->getBag()->has('newKey'));
+        $this->assertFalse($this->session->getBag()->has('notexists'));
     }
 
     public static function provideValidValues(): array

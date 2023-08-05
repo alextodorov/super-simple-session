@@ -2,6 +2,7 @@
 
 namespace SSSession\UnitTest;
 
+use SSSession\SessionBag;
 use SSSession\MainSessionHandler;
 use SSSession\Session;
 
@@ -11,7 +12,7 @@ trait SessionHelper
 
     protected function setUp(): void
     {
-        $this->session = new Session();
+        $this->session = new Session(new SessionBag());
 
         $handler = new MainSessionHandler(new ArrayStorageHelper());
 

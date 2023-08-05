@@ -4,6 +4,7 @@ namespace SSSession\UnitTest;
 
 use LogicException;
 use PHPUnit\Framework\TestCase;
+use SSSession\SessionBag;
 
 class SessionTest extends TestCase
 {
@@ -100,6 +101,14 @@ class SessionTest extends TestCase
         $this->session->disableReadonly();
         $this->session->start();
         $this->assertSame(\PHP_SESSION_ACTIVE, \session_status());
+    }
+
+    public function testGetSetBag(): void
+    {
+        $newbag = new class extends SessionBag {};
+
+        $this->session->setBag($newbag);
+        $this->assertInstanceOf($newbag::class, $this->session->getBag());
     }
 
     public static function provideValidOptions(): array

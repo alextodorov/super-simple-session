@@ -6,10 +6,8 @@ namespace SSSession;
 
 use LogicException;
 
-class Session extends AbstractSession implements SessionInterface, SessionValueInterface
+class Session extends AbstractSession implements SessionableInterface, SessionBagableInterface
 {
-    use SessionValue;
-
     public const OPTIONS_PREFIX = 'session';
 
     public const SUPPORTED_OPTIONS = [
@@ -30,7 +28,9 @@ class Session extends AbstractSession implements SessionInterface, SessionValueI
         'sid_bits_per_character',
     ];
 
-    private array $data = [];
+    public function __construct(private SessionValuableInterface $bag)
+    {
+    }
 
     public function start(): bool
     {
@@ -48,7 +48,7 @@ class Session extends AbstractSession implements SessionInterface, SessionValueI
             throw new LogicException('Can\'t start the session.');
         }
 
-        $this->data = & $_SESSION;
+        $this->bag->initValues();
 
         return true;
     }
@@ -97,5 +97,15 @@ class Session extends AbstractSession implements SessionInterface, SessionValueI
         }
 
         return \session_commit();
+    }
+
+    public function setBag(SessionValuableInterface $bag): void
+    {
+       $this->bag = $bag;
+    }
+
+    public function getBag(): SessionValuableInterface
+    {
+       return $this->bag;
     }
 }

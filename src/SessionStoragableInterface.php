@@ -2,7 +2,7 @@
 
 namespace SSSession;
 
-interface SessionStorageInterface
+interface SessionStoragableInterface
 {
     public function read(string $id): string;
 

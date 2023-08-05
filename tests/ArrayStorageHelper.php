@@ -2,9 +2,9 @@
 
 namespace SSSession\UnitTest;
 
-use SSSession\SessionStorageInterface;
+use SSSession\SessionStoragableInterface;
 
-class ArrayStorageHelper implements SessionStorageInterface
+class ArrayStorageHelper implements SessionStoragableInterface
 {
     public function __construct(private array $storage = [])
     {    

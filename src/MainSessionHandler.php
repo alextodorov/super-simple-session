@@ -7,7 +7,7 @@ use SessionUpdateTimestampHandlerInterface;
 
 class MainSessionHandler implements SessionHandlerInterface, SessionUpdateTimestampHandlerInterface
 {
-    public function __construct(private SessionStorageInterface $storage)
+    public function __construct(private SessionStoragableInterface $storage)
     {
     }
 

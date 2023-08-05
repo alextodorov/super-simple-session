@@ -2,7 +2,7 @@
 
 namespace SSSession;
 
-interface SessionInterface
+interface SessionableInterface
 {
     public function start(): bool;
 
